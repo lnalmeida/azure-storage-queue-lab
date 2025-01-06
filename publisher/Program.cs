@@ -11,11 +11,11 @@ namespace MessagePublisher;
         {
             Person personData = new Person
             {
-                Name = "John Doe",
-                Age = 30
+                Name = "Elon Musk",
+                Age = 51
             };
             string stringPersonData = JsonSerializer.Serialize(personData);
-            string connectionString = "Endpoint=sb://lab-stgqueue-namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=LJ3mjAaoauU2j3EsDJI1K6oTgjX4W7nWD+ASbNDlEdI=";
+            string connectionString = "Endpoint=sb://svcbus-lab-namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=RSXIjCRCmL9f9GelfuH+vEUIcipIQzkOi+ASbMgR6Ls=";
             string queueName = "messagequeue";
             ServiceBusMessage messageToSend = new ServiceBusMessage(stringPersonData);
             await SendMessage(connectionString, queueName, messageToSend);
